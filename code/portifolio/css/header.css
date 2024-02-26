@@ -1,0 +1,21 @@
+header{
+    height: 60px;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+}
+
+.link:hover{
+    color: rgb(60 180 186);
+}
+
+.selectedLinkMenu{
+    color: rgb(13 204 86);
+}
+
+.listNavMenu li{
+    margin: 20px;
+    list-style: none;
+}
