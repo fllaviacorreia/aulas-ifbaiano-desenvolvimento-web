@@ -1,13 +1,11 @@
 Repositório voltado para as aulas de Desenvolvimento Web do IFBainao - Itapetinga no semestre 2023.2
 
-A aula 1 foi uma introdução sobre o que é HTML, como realizar sua estrututração e algumas tags importantes para criação de interfaces de usuário.
+A aula 2 foi uma continuação da aula 1, trazendo mais tags e seus usos.
 
 ## Pontos tratados :bookmark_tabs:
 
-    - O que é HTML
-    - O que é uma Tag
-    - Os atributos em uma tag
-    - O que é sintaxe e semâtica
-    - HTML semântico
-    - A estrutura básica de um código HTML
-    - A estrutura básica de um projeto frontend
+    - A tag meta
+    - A tag link
+    - A tag a
+    - Classes e Identificadores
+    - Introdução ao CSS
