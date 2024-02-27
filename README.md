@@ -4,10 +4,19 @@ A aula 1 foi uma introdução sobre o que é HTML, como realizar sua estrututra�
 
 ## Pontos tratados :bookmark_tabs:
 
-    - O que é HTML
-    - O que é uma Tag
-    - Os atributos em uma tag
-    - O que é sintaxe e semâtica
-    - HTML semântico
-    - A estrutura básica de um código HTML
-    - A estrutura básica de um projeto frontend
+    - Adicionar fontes por Link e por arquivo (@font-face no css)
+    - Estilização do cabeçalho
+    - Estilizando Botões
+    - Utilizando
+        - display
+        - flex-direction
+        - border-radius
+        - width
+        - heigth
+        - font-family
+        - font-size
+        - color
+        - margin
+    - Como replicar um código da internet sem erros
+    - Trocando section para main nos arquivos .html
+    - Incluindo os arquivos .css nos seus respectivos documentos html
