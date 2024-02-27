@@ -3,7 +3,7 @@
  https://fonts.google.com/specimen/Playfair+Display
  https://fonts.google.com/specimen/Montserrat
 3 – definir a paleta de cores
-     #582F0E #7F4F24
+    https://coolors.co/8a2387-e94057-f27121-090809-fcecc9
 - background
 - textos
 -botões
