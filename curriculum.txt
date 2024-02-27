@@ -3,6 +3,7 @@
  https://fonts.google.com/specimen/Playfair+Display
  https://fonts.google.com/specimen/Montserrat
 3 – definir a paleta de cores
+     #582F0E #7F4F24
 - background
 - textos
 -botões

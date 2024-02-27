@@ -1,8 +1,13 @@
+@font-face {
+    font-family: "";
+    src: url('assets/font.ttf');
+}
+
 body{
     margin: 0;
 }
 
-section{
+main{
     height: 100dvh;
 }
 
