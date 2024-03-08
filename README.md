@@ -11,3 +11,7 @@ A aula 1 foi uma introdução sobre o que é HTML, como realizar sua estrututra�
     - HTML semântico
     - A estrutura básica de um código HTML
     - A estrutura básica de um projeto frontend
+
+## Resultados
+
+![Captura de tela](https://github.com/fllaviacorreia/aulas-ifbaiano-desenvolvimento-web/assets/48125785/42b75ef8-6c49-4145-b4eb-a37953bf3f66)
