@@ -7,3 +7,6 @@ Repositório voltado para as aulas de Desenvolvimento Web do IFBainao - Itapetin
     estilização incial do footer
     continuação da estilização da página home
     técnicas de agrupamento de propriedades equivalentes no css
+
+## Resultados
+![Captura de tela](https://github.com/fllaviacorreia/aulas-ifbaiano-desenvolvimento-web/assets/48125785/48df9021-ddcd-4432-a3b1-bf1fbb68d7c7)
