@@ -2,13 +2,9 @@ header{
     width: 90%;
     margin: 10px 20px;
     padding: 10px;
-    height: 70px;
+    height: 80px;
     background-color: #fcecc9;
     border-radius: 30px;
-    position: absolute;
-    left: 50%;
-    top: 10%;
-    transform: translate(-50%, -50%);
 }
 
 .logoHeader{
