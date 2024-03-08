@@ -11,4 +11,4 @@ A aula 2 foi uma continuação da aula 1, trazendo mais tags e seus usos.
     - Introdução ao CSS
 
 ## Resultados
-![Captura de tela](https://github.com/fllaviacorreia/aulas-ifbaiano-desenvolvimento-web/assets/48125785/75dd4d87-8d52-43d0-8752-fd088228a4f1)
+![Captura de tela](https://github.com/fllaviacorreia/aulas-ifbaiano-desenvolvimento-web/assets/48125785/3d2cf80b-43df-4895-8aa8-38bb35007c03)
