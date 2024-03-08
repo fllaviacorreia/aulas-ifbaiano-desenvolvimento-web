@@ -2,10 +2,7 @@ Repositório voltado para as aulas de Desenvolvimento Web do IFBainao - Itapetin
 
 ## Pontos tratados :bookmark_tabs:
 
-    - O que é HTML
-    - O que é uma Tag
-    - Os atributos em uma tag
-    - O que é sintaxe e semâtica
-    - HTML semântico
-    - A estrutura básica de um código HTML
-    - A estrutura básica de um projeto frontend
+    Introdução à produção do Projeto Portfólio
+    Estabelecimento do padrões do projeto
+    Estruturação do HTML
+    Criação de arquivos do CSS
