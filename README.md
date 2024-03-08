@@ -18,3 +18,5 @@ Repositório voltado para as aulas de Desenvolvimento Web do IFBainao - Itapetin
     - Como replicar um código da internet sem erros
     - Trocando section para main nos arquivos .html
     - Incluindo os arquivos .css nos seus respectivos documentos html
+## Resultados
+![Captura de tela](https://github.com/fllaviacorreia/aulas-ifbaiano-desenvolvimento-web/assets/48125785/fe27b657-5f65-432c-a3dc-7e440bde8222)
