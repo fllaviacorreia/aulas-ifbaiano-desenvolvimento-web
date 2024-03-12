@@ -1,0 +1,41 @@
+1 – definir a logo 
+2 – definir as fontes
+ https://fonts.google.com/specimen/Playfair+Display
+ https://fonts.google.com/specimen/Montserrat
+3 – definir a paleta de cores
+    https://coolors.co/8a2387-e94057-f27121-090809-fcecc9
+- background
+- textos
+-botões
+4 – definir o currículo 
+    • Sobre mim
+        ◦ Descrição em tópicos, ou texto, sobre mim, contando as habilidades (soft skills)
+    • Formação
+        ◦ Instituição
+        ◦ Curso
+        ◦ Nível do Curso (Técnico, Superior (Licenciatura | Bacharelado | Tecnólogo)
+        ◦ Ano Entrada – Ano Saída
+        ◦ Status (Em andamento | Incompleto | Completo)
+    • Experiências
+        ◦ Empresa 
+        ◦ Cargo (voluntariado ou não)
+        ◦ Ano Entrada – Ano Saída
+        ◦ Descrição das atividades
+    • Projetos
+        ◦ nome
+        ◦ duração
+        ◦ descrição
+        ◦ linguagem
+        ◦ imagem(ns)
+    • Ferramentas
+        ◦ nome
+        ◦ tempo de experiência
+        ◦ nível de conhecimento (baixo, médio, alto)
+    • Linguagens
+        ◦ nome
+        ◦ tempo de experiência
+        ◦ nível de conhecimento (baixo, médio, alto)
+    • Idiomas
+        ◦ instituição
+        ◦ nome
+        ◦ nível de conhecimento (baixo, médio, alto)
