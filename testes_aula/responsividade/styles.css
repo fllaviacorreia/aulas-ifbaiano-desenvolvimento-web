@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+}
+
+.header {
+    background-color: #929090;
+    color: #fff;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    width: 80px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.login-btn a {
+    padding: 10px 20px;
+    background-color: #cc00ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.menu-icon {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .logo img {
+        width: 50px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu-icon img {
+        width: 30px;
+    }
+
+    .menu-list {
+        display: none; /* Ocultar o menu por padrão */
+    }
+
+    .menu-list.open {
+        display: block; /* Exibir o menu quando a classe open é adicionada */
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+    }
+
+}
