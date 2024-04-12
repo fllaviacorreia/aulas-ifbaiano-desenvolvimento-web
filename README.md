@@ -4,8 +4,13 @@ Essa é uma aula introdutória ao Desenvolvimento Backend com Spring Boot
 
 ## Pontos tratados :bookmark_tabs:
 
-    - Setup do Backend
-        - Docker
-        - Postgres 16.2
-        - Adminer
-        - Spring Tools 4
+    - Create an ClienteRepository
+    - Include Annotations Lombok in Controller e Model
+    - CRUD Cliente
+        - Get All
+        - Get By ID
+        - Get By Name
+        - Get With An Name
+        - Post
+        - Put
+        
