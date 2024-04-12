@@ -17,42 +17,51 @@ import com.project.payment.domain.model.ClienteModel;
 public class ClienteController {
     private final ClienteRepository clienteRepository;
 
-    //retorna todos os clientes encontrados se não []
+    // retorna todos os clientes encontrados, se não []
     @GetMapping()
     public List<ClienteModel> listAll() {
         return clienteRepository.findAll();
     }
 
-//    @GetMapping("/{nome}")
-//    public List<ClienteModel> listByName(@PathVariable String nome) {
-//        return clienteRepository.findByNome(nome);
-//    }
+    @GetMapping("/findByNome")
+    public ClienteModel listByName(@PathVariable String nome) {
+        return clienteRepository.findByNome(nome);
+    }
+
+    @GetMapping("/findWithNome")
+    public List<ClienteModel> listWithName(@PathVariable String nome) {
+        return clienteRepository.findByNomeContains(nome);
+    }
+
     // retorna o cliente encontrado pelo id, se não uma mensagem de erro
     @GetMapping("/{id}")
-        public Optional<ResponseEntity> findOne(@PathVariable Long id) {
+    public Optional<ResponseEntity> findOne(@PathVariable Long id) {
         var client = clienteRepository.findById(id);
-         if(client.isEmpty()) {
-             return Optional.of(ResponseEntity
-                     .status(HttpStatus.NOT_FOUND)
-                     .body("Cliente nao encontrado"));
-         }
+        if (client.isEmpty()) {
+            return Optional.of(ResponseEntity
+                    .status(HttpStatus.NOT_FOUND)
+                    .body("Cliente nao encontrado"));
+        }
 
-//         return client.map(clienteModel -> ResponseEntity.ok(clienteModel));
-         return client.map(ResponseEntity::ok);
+        //op 1
+        // return client.map(clienteModel -> ResponseEntity.ok(clienteModel));
+        return client.map(ResponseEntity::ok);
 
-         // return clienteRepository.findById(id)
-        //          .map(cliente -> ResponseEntity.ok(cliente))
-        //          .orElse(ResponseEntity.notFound().build());
-
+        //op 2
         // return clienteRepository.findById(id)
-        //          .map(ResponseEntity::ok())
-        //          .orElse(ResponseEntity.notFound().build());
+        // .map(cliente -> ResponseEntity.ok(cliente))
+        // .orElse(ResponseEntity.notFound().build());
+
+        //op 3
+        // return clienteRepository.findById(id)
+        // .map(ResponseEntity::ok())
+        // .orElse(ResponseEntity.notFound().build());
     }
 
     // cadastra um novo cliente
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ClienteModel create(@RequestBody ClienteModel cliente){
+    public ClienteModel create(@RequestBody ClienteModel cliente) {
         return clienteRepository.save(cliente);
     }
 
@@ -60,9 +69,8 @@ public class ClienteController {
     @PutMapping("/{id}")
     public ResponseEntity<ClienteModel> update(
             @PathVariable Long id,
-            @RequestBody ClienteModel cliente
-            ){
-        if(!clienteRepository.existsById(id)){
+            @RequestBody ClienteModel cliente) {
+        if (!clienteRepository.existsById(id)) {
             return ResponseEntity.notFound().build();
         }
         cliente.setId(id);
@@ -70,6 +78,5 @@ public class ClienteController {
 
         return ResponseEntity.ok(cliente);
     }
-
 
 }
