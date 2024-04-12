@@ -1,13 +1,18 @@
 package com.project.payment.domain.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-@Getter
-@Setter
+@Data
+@Entity
+@Table(name="client")
 public class ClienteModel {
-	private Long id;
-	private String name;
-	private String email;
-	private String phone;
+    @EqualsAndHashCode.Include
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String nome;
+    private String email;
+    private String phone;
 }
