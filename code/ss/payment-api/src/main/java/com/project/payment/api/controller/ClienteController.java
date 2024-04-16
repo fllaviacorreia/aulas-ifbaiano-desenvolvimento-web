@@ -3,33 +3,40 @@ package com.project.payment.api.controller;
 import java.util.List;
 import java.util.Optional;
 
-import com.project.payment.domain.repository.ClienteRepository;
+import com.project.payment.domain.exception.NegocioException;
+import com.project.payment.domain.service.GerenciamentoClienteService;
+import jakarta.validation.Valid;
+
 import lombok.AllArgsConstructor;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.project.payment.domain.repository.ClienteRepository;
 import com.project.payment.domain.model.ClienteModel;
 
 @AllArgsConstructor
 @RestController
 @RequestMapping("/clientes")
 public class ClienteController {
+    private final GerenciamentoClienteService gerenciamentoClienteService;
     private final ClienteRepository clienteRepository;
 
     // retorna todos os clientes encontrados, se não []
     @GetMapping()
     public List<ClienteModel> listAll() {
+
         return clienteRepository.findAll();
     }
 
     @GetMapping("/findByNome")
-    public ClienteModel listByName(@PathVariable String nome) {
+    public List<ClienteModel> listByName(@RequestParam String nome) {
         return clienteRepository.findByNome(nome);
     }
 
     @GetMapping("/findWithNome")
-    public List<ClienteModel> listWithName(@PathVariable String nome) {
+    public List<ClienteModel> listWithName(@RequestParam String nome) {
         return clienteRepository.findByNomeContains(nome);
     }
 
@@ -38,9 +45,12 @@ public class ClienteController {
     public Optional<ResponseEntity> findOne(@PathVariable Long id) {
         var client = clienteRepository.findById(id);
         if (client.isEmpty()) {
-            return Optional.of(ResponseEntity
-                    .status(HttpStatus.NOT_FOUND)
-                    .body("Cliente nao encontrado"));
+
+                throw new NegocioException("cliente com id = "+id+" nao encontrado");
+
+//            return Optional.of(ResponseEntity
+//                    .status(HttpStatus.NOT_FOUND)
+//                    .body("Cliente nao encontrado"));
         }
 
         //op 1
@@ -61,22 +71,38 @@ public class ClienteController {
     // cadastra um novo cliente
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ClienteModel create(@RequestBody ClienteModel cliente) {
-        return clienteRepository.save(cliente);
+    public ClienteModel create(@Valid @RequestBody ClienteModel cliente) {
+        return gerenciamentoClienteService.salvar(cliente);
     }
 
     // altera um cliente cadastrado se não retorna erro 404
     @PutMapping("/{id}")
     public ResponseEntity<ClienteModel> update(
             @PathVariable Long id,
-            @RequestBody ClienteModel cliente) {
+            @Valid @RequestBody ClienteModel cliente) {
         if (!clienteRepository.existsById(id)) {
-            return ResponseEntity.notFound().build();
+            throw new NegocioException("cliente com "+id+"nao encontrado");
         }
+
         cliente.setId(id);
-        cliente = clienteRepository.save(cliente);
+        cliente = gerenciamentoClienteService.salvar(cliente);
 
         return ResponseEntity.ok(cliente);
     }
 
+    // remove um cliente
+    @DeleteMapping("/{id}")
+    public ResponseEntity<ClienteModel> delete(@PathVariable Long id) {
+        if (!clienteRepository.existsById(id)) {
+            return ResponseEntity.notFound().build();
+        }
+        gerenciamentoClienteService.excluir(id);
+
+        return ResponseEntity.noContent().build();
+    }
+
+    @ExceptionHandler(NegocioException.class)
+    public ResponseEntity<String> capture(NegocioException e){
+        return ResponseEntity.badRequest().body(e.getMessage());
+    }
 }
