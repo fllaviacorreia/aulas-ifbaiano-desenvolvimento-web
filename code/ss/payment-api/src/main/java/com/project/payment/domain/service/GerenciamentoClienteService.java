@@ -14,6 +14,11 @@ import org.springframework.transaction.annotation.Transactional;
 public class GerenciamentoClienteService {
     private final ClienteRepository clienteRepository;
 
+    ClienteModel findById(Long id) {
+        return clienteRepository.findById(id)
+                .orElseThrow(() -> new NegocioException("Cliente nao encontrado."));
+    }
+
     @Transactional
     public ClienteModel salvar(ClienteModel clienteModel) {
         boolean emailExistente = clienteRepository
