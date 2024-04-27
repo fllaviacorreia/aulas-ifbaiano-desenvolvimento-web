@@ -7,7 +7,7 @@ import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-@Data
+@Data 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
 @Table(name="client")
