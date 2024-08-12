@@ -1,0 +1,2 @@
+ALTER TABLE client
+    ADD COLUMN active BOOLEAN DEFAULT true NOT NULL;
