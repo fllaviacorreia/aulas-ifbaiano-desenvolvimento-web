@@ -39,8 +39,14 @@ public class ClienteController {
         return clienteRepository.findAll();
     }
 
+<<<<<<< Updated upstream
     @GetMapping("/findByNome")
     public List<ClienteModel> findByNome(@RequestParam String nome) {
+=======
+    @GetMapping("/listByName")
+    public ClienteModel listByName(@RequestParam String nome) {
+    	System.out.println(nome);
+>>>>>>> Stashed changes
         return clienteRepository.findByNome(nome);
     }
     
