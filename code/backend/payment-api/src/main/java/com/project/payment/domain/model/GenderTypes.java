@@ -1,6 +1,6 @@
 package com.project.payment.domain.model;
 
-public enum genderTypes {
+public enum GenderTypes {
     FEMININO,
     MASCULINO,
     OUTRO

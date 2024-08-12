@@ -1,0 +1,140 @@
+@font-face {
+    font-family: 'Raleway Regular';
+    src: url('./Raleway-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body{
+    margin: 0;
+    width: 100dvw;
+    height: 100dvh;
+    background-color: rgb(136, 179, 136);
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+    font-family: 'Raleway Regular';
+}
+
+header{
+    width: 100%;
+    height: 60px;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(106, 146, 106);
+}
+
+h1, h2{
+    color: aliceblue;
+}
+
+section, form, main{
+    width: 90%;
+    padding: 17px;
+}
+
+section, form, main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputForm{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 12px 0;
+}
+
+input{
+    padding: 11px;
+    border-radius: 7px;
+    font-size: larger;
+    border: none;
+    margin-top: 2px;
+}
+
+.buttonSubmitForm{
+    width: 35%;
+    background-color: rgb(41, 88, 41);
+    font-size: large;
+    color: white;
+    padding:9px;
+    border-radius: 25px;
+    border: none;
+}
+
+ul{
+    list-style: none;
+    width: 99%;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    margin: 6px 0;
+    border-radius: 15px;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+li.completed label {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+li button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+li button:hover {
+    background-color: #c9302c;
+}
+
+li label {
+    flex: 1;
+    margin-left: 10px;
+}
+
+
+/* Estilo para telas pequenas */
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+}
+
+/* Estilo para telas médias */
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+    h1 {
+        font-size: 2em;
+    }
+}
+
+
+/* Estilo para telas grandes */
+@media screen and (min-width: 1201px) {
+    h1 {
+        font-size: 2.5em;
+    }
+}

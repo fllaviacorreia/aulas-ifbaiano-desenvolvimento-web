@@ -1,25 +1,16 @@
 package com.project.payment.domain.model;
 
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-
-import jakarta.validation.constraints.Email;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+@Data
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
 @Table(name="client")
-@Data
-// adicionado
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class ClienteModel {
-
     @EqualsAndHashCode.Include
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,11 +21,16 @@ public class ClienteModel {
     private String nome;
 
     @NotBlank
-    @Email
-    @Size(max = 250)
-    private String email;
+    @Size(min = 11 , max = 14)
+    private String cpf;
 
     @NotBlank
     @Size(max = 16)
     private String phone;
+
+    @Enumerated(EnumType.STRING)
+    private GenderTypes gender;
+
+    private boolean active;
+
 }

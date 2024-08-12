@@ -3,30 +3,23 @@ package com.project.payment.domain.service;
 import com.project.payment.domain.exception.NegocioException;
 import com.project.payment.domain.model.ClienteModel;
 import com.project.payment.domain.repository.ClienteRepository;
-
 import lombok.AllArgsConstructor;
-
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@AllArgsConstructor
 @Service
+@AllArgsConstructor
 public class GerenciamentoClienteService {
     private final ClienteRepository clienteRepository;
 
-    ClienteModel findById(Long id) {
-        return clienteRepository.findById(id)
-                .orElseThrow(() -> new NegocioException("Cliente nao encontrado."));
-    }
-
     @Transactional
     public ClienteModel salvar(ClienteModel clienteModel) {
-        boolean emailExistente = clienteRepository
-                            .findByEmail(clienteModel.getEmail())
-                            .filter(cliente -> !cliente.equals(clienteModel))
-                            .isPresent();
-        if (emailExistente) {
-           throw new NegocioException("email ja em uso");
+        boolean emailInUse = clienteRepository
+                .findByEmail(clienteModel.getEmail())
+                .filter(cliente -> !cliente.equals(clienteModel))
+                .isPresent();
+        if(emailInUse) {
+            throw new NegocioException("email ja em uso.");
         }
         return clienteRepository.save(clienteModel);
     }
@@ -35,4 +28,5 @@ public class GerenciamentoClienteService {
     public void excluir(Long id) {
         clienteRepository.deleteById(id);
     }
+
 }
